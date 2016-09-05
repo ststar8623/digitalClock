@@ -1,0 +1,10 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#displayClock {
+	width: 100%;
+	font-size: 10em;
+	text-align: center;
+}
