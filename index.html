@@ -6,21 +6,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- The above 3 meta tags must come first in the head -->
 
-		<title>template</title>
+		<title>Happy Face Digital Clock</title>
 		
 		<!-- Included jQuery -->
 		<script type="text/javascript" src="js/jquery-3.1.0.js"></script>
 		<!-- Included Bootstrap -->
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></script>
 
+		<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+
 		<!-- Custom CSS -->
 		<link rel="stylesheet" type="text/css" href="css/animate.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 
 	</head>
-	<body onload="digitalClock()">
-		<div id="displayClock"></div>
-		
+	<body>
+		<canvas id='mycanvas' height='500px' width='500px'></canvas>
+		<img id='myImage'>
+
 		<!-- Bootstrap core JavaScript ================================================== -->
 		<!-- Included jQuery -->
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
