@@ -74,32 +74,49 @@ function getTime() {
     ctx.beginPath();
     ctx.moveTo(250, 450);
     ctx.lineTo(250, 500);
+    ctx.strokeStyle = '#77F24E'
     ctx.stroke();
 
     ctx.beginPath();
     ctx.moveTo(230, 450);
     ctx.lineTo(200, 470);
-    ctx.lineTo(150, 430);
+        // animation for hand movement
+        if ( seconds % 2 ) {
+            ctx.lineTo(150, 430);
+        } else {
+        ctx.lineTo(150, 490);
+        }
+    ctx.strokeStyle = '#C94EF2';
+    ctx.lineJoin = 'round';
     ctx.stroke();
 
     ctx.beginPath();
     ctx.moveTo(270, 450);
     ctx.lineTo(300, 470);
-    ctx.lineTo(350, 430);
+        // animation for hand movement
+        if ( seconds % 2 ) {
+            ctx.lineTo(350, 490);
+        } else {
+        ctx.lineTo(350, 430);
+        }
+    ctx.lineJoin = 'round';
     ctx.stroke();
 
+    // face blinking
     if ( seconds % 2 ) {
         ctx.strokeStyle = "#000"
     } else {
         ctx.strokeStyle = '#4EC9F2'
     }
 
-    ctx.font = '21px Orbitron';
+    // fill date and clock
+    ctx.font = '19px Orbitron';
     ctx.fillStyle = '#4EC9F2';
-    ctx.fillText(months, 180, 220);
-    ctx.fillText(days, 280, 250);
-    ctx.fillText(year, 260, 280);
-    ctx.fillText(time, 180, 320);
+    ctx.fillText(months, 190, 220);
+    ctx.fillText(days, 280, 240);
+    ctx.fillText(year, 260, 260);
+    ctx.font = '23px Orbitron';
+    ctx.fillText(time, 180, 300);
 
     var dataURL = canvas.toDataURL();
 
@@ -108,5 +125,3 @@ function getTime() {
 }
 
 setInterval(getTime, 40);
-
-
