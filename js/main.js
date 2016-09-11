@@ -43,21 +43,21 @@ function getTime() {
     ctx.fillStyle = gradient;
     ctx.fillRect(0,0,500,500);
 
-    //Hours
+    //Hours / eyeball
     ctx.beginPath();
-    ctx.arc(250, 230, 200, degToRad(270), degToRad(hours*30-90));
+    ctx.arc(182, 180, 1, degToRad(270), degToRad(hours*30-90));
     ctx.stroke();
 
-    //Minutes
+    //Minutes / faceshape
     ctx.beginPath();
-    ctx.arc(182, 180, 1, degToRad(270), degToRad(minutes*3-360));
+    ctx.arc(250, 230, 200, degToRad(270), degToRad(minutes*3-360));
     ctx.stroke();
 
     ctx.beginPath();
     ctx.arc(322, 180, 1, degToRad(270), degToRad(minutes*3-360));
     ctx.stroke();
 
-    //Seconds
+    //Seconds / happyface
     ctx.beginPath();
     ctx.arc(250, 270, 110, degToRad(0), degToRad(newSeconds*3-360));
     ctx.stroke();
@@ -72,7 +72,7 @@ function getTime() {
 
     // body stroke
     ctx.beginPath();
-    ctx.moveTo(250, 430);
+    ctx.moveTo(250, 450);
     ctx.lineTo(250, 500);
     ctx.stroke();
 
