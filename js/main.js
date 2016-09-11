@@ -1,8 +1,9 @@
 var canvas = document.getElementById('mycanvas');
 var ctx = canvas.getContext('2d');
-ctx.lineWidth = 15;
+ctx.lineWidth = 13;
 ctx.lineCap = 'round';
-ctx.shadowBlur = 50;
+ctx.shadowBlur = 45;
+ctx.shadowColor = "#4EC9F2"
 
 function degToRad(degrees){
     return degrees*Math.PI/180;
@@ -44,45 +45,61 @@ function getTime() {
 
     //Hours
     ctx.beginPath();
-    ctx.arc(250, 250, 220, degToRad(270), degToRad(hours*30-90));
+    ctx.arc(250, 230, 200, degToRad(270), degToRad(hours*30-90));
     ctx.stroke();
 
     //Minutes
     ctx.beginPath();
-    ctx.arc(182, 200, 1, degToRad(270), degToRad(minutes*3-360));
+    ctx.arc(182, 180, 1, degToRad(270), degToRad(minutes*3-360));
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.arc(322, 200, 1, degToRad(270), degToRad(minutes*3-360));
+    ctx.arc(322, 180, 1, degToRad(270), degToRad(minutes*3-360));
     ctx.stroke();
 
     //Seconds
     ctx.beginPath();
-    ctx.arc(250, 290, 140, degToRad(0), degToRad(newSeconds*3-360));
+    ctx.arc(250, 270, 110, degToRad(0), degToRad(newSeconds*3-360));
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.arc(180, 200, 50, degToRad(180), degToRad(newSeconds*3-180));
+    ctx.arc(180, 180, 40, degToRad(180), degToRad(newSeconds*3-180));
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.arc(320, 200, 50, degToRad(180), degToRad(newSeconds*3-180));
+    ctx.arc(320, 180, 40, degToRad(180), degToRad(newSeconds*3-180));
+    ctx.stroke();
+
+    // body stroke
+    ctx.beginPath();
+    ctx.moveTo(250, 430);
+    ctx.lineTo(250, 500);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(230, 450);
+    ctx.lineTo(200, 470);
+    ctx.lineTo(150, 430);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(270, 450);
+    ctx.lineTo(300, 470);
+    ctx.lineTo(350, 430);
     ctx.stroke();
 
     if ( seconds % 2 ) {
         ctx.strokeStyle = "#000"
-        ctx.shadowColor = "#4EC9F2"
     } else {
         ctx.strokeStyle = '#4EC9F2'
-        ctx.shadowColor = "#4EC9F2"
     }
 
-    ctx.font = '25px Orbitron';
+    ctx.font = '21px Orbitron';
     ctx.fillStyle = '#4EC9F2';
-    ctx.fillText(months, 180, 240);
-    ctx.fillText(days, 300, 270);
-    ctx.fillText(year, 280, 300);
-    ctx.fillText(time, 180, 350);
+    ctx.fillText(months, 180, 220);
+    ctx.fillText(days, 280, 250);
+    ctx.fillText(year, 260, 280);
+    ctx.fillText(time, 180, 320);
 
     var dataURL = canvas.toDataURL();
 
@@ -91,3 +108,5 @@ function getTime() {
 }
 
 setInterval(getTime, 40);
+
+
